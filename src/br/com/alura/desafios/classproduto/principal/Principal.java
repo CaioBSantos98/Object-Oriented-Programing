@@ -23,11 +23,21 @@ public class Principal {
         System.out.println("Produto na segunda posição: " + listaProdutos.get(1));
         System.out.println(listaProdutos);
 
-        var arroz = new ProdutoPerecivel("Arroz", 25, new Date(2024, 0, 20));
+        var arroz = new ProdutoPerecivel("Arroz", 25, new Date(124, 0, 20));
         listaProdutos.add(arroz);
 
         System.out.println(arroz);
         System.out.println(listaProdutos);
+
+        double precoMedioProdutos = 0;
+        for (int i = 0; i < listaProdutos.size(); i++) {
+            precoMedioProdutos += listaProdutos.get(i).getPreco();
+            if(i == listaProdutos.size() - 1) {
+                precoMedioProdutos /= listaProdutos.size();
+            }
+        }
+
+        System.out.println(precoMedioProdutos);
 
     }
 }
